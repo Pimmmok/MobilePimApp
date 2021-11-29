@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:PimApp;assembly=Pogresnost"   
+             x:Class="PimApp.SelectedAktPage" Title="{local:Translate View}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="{local:Translate Name_OrgText}" />
+                <Entry Text="{Binding Name_Org}" IsReadOnly="true" />
+                <Label Text="{local:Translate Date}" />
+                <Entry Text="{Binding Date_Akt }" IsReadOnly="true"  />
+                <Label Text="{local:Translate Model_CounterText}" />
+                <Entry Text="{Binding Model_Counter}" IsReadOnly="true"  />
+                <Label Text="{local:Translate Number_CounterText}" />
+                <Entry Text="{Binding Number_Counter}" IsReadOnly="true"  />
+                <Label Text="{local:Translate Energy_ValuesText}" />
+                <Entry Text="{Binding Energy_Values}" IsReadOnly="true"  />
+                <Label Text="{Binding Result}" />
+                <ScrollView>
+                    <StackLayout Orientation="Vertical"
+              VerticalOptions="Start"
+           HorizontalOptions="StartAndExpand">
+                        <ListView x:Name="listview" VerticalOptions="FillAndExpand"
+               RowHeight="30">
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+                <Label Text="{local:Translate Count}" />
+                <Entry Text="{Binding Number_of_measurements}" IsReadOnly="true" />
+                <Label Text="{local:Translate Avg}" />
+                <Entry Text="{Binding Average}" IsReadOnly="true"  />
+                <Label Text="{local:Translate Avg2}" />
+                <Entry x:Name="entry" Text="{Binding Qvadro_Average}" IsReadOnly="true"  />
+                <Label Text="{local:Translate NoteText}" />
+                <Editor Text="{Binding Note}" IsReadOnly="true"  BackgroundColor="LightBlue" />
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="button" Text="{local:Translate Delete}" Clicked="Delete"></Button>
+                    <Button Text="{local:Translate Back}" Clicked="Cancel"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

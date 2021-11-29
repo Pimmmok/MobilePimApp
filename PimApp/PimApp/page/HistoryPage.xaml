@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PimApp;assembly=Pogresnost"  
+             mc:Ignorable="d"
+             x:Class="PimApp.HistoryPage"
+             NavigationPage.HasNavigationBar="False"
+              >
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <StackLayout>
+             <SearchBar x:Name="MainSearchBar" TextChanged="OnBtnPressed" />
+             <ListView x:Name="aktList" ItemsSource="{Binding}" HasUnevenRows="True" ItemSelected="OnItemSelected" SeparatorColor="#499D34">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding Name_Org}" FontSize="18" />
+                                    <Label Text="{Binding Date_Akt}" />
+                                    <StackLayout Orientation="Horizontal">
+                                            <Label Text="{local:Translate Number_CounterText}" />
+                                    <Label Text="{Binding Number_Counter}" />
+                                     </StackLayout>
+                                    </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+         </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

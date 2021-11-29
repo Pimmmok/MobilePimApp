@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:PimApp;assembly=Pogresnost"           
+             mc:Ignorable="d"
+             x:Class="PimApp.SavePage" Title= "{local:Translate SaveResult}">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="{local:Translate Name_OrgText}" FontSize = "15" />
+            <Entry Text="{Binding Name_Org}" FontSize = "15"/>
+            <Label Text="{local:Translate Model_CounterText}" FontSize = "15"/>
+            <Entry Text="{Binding Model_Counter}" FontSize = "15" />
+            <Label Text="{local:Translate Number_CounterText}" FontSize = "15"/>
+            <Entry Text="{Binding Number_Counter}" FontSize = "15" />
+            <Label Text="{local:Translate Energy_ValuesText}" FontSize = "15" />
+            <Entry Text="{Binding Energy_Values}" Keyboard="Numeric" FontSize = "15" />
+            <Label Text="{local:Translate NoteText}" FontSize = "15" />
+            <Editor Text="{Binding Note}" HeightRequest="200" FontSize = "15" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="{local:Translate Save}" FontSize = "15" Clicked="Save"/>
+                <Button Text="{local:Translate Cancel}" FontSize = "15" Clicked="Cancel"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
